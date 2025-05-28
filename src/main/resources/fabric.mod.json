@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "xecute",
+  "version": "${version}",
+  "name": "xecute",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "unlicense",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "elito.xecute.Xecute"
+    ]
+  },
+  "mixins": [
+    "xecute.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
