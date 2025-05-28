@@ -2,6 +2,7 @@ package elito.xecute.mixin;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.DoubleArgumentType;
+import com.mojang.brigadier.arguments.FloatArgumentType;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import elito.xecute.modules.raycast.Cast;
 import elito.xecute.modules.raycast.Snap;
@@ -98,11 +99,11 @@ public class ExecuteCommandMixin {
                                                 .then(
                                                         CommandManager.argument("axis", SwizzleArgumentType.swizzle())
                                                                 .then(
-                                                                        CommandManager.argument("step", IntegerArgumentType.integer())
+                                                                        CommandManager.argument("step", FloatArgumentType.floatArg(0, 360))
                                                                                 .redirect(
                                                                                         dispatcher.getRoot().getChild("execute"),
                                                                                         context -> {
-                                                                                            int step = IntegerArgumentType.getInteger(context, "step");
+                                                                                            float step = FloatArgumentType.getFloat(context, "step");
 
                                                                                             ServerCommandSource source = context.getSource();
 

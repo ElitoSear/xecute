@@ -7,7 +7,7 @@ import java.util.EnumSet;
 
 public class Snap {
 
-    public static Vec2f snap(Vec2f rotation, int step, EnumSet<Direction.Axis> axes) {
+    public static Vec2f snap(Vec2f rotation, float step, EnumSet<Direction.Axis> axes) {
         float yaw = rotation.x;
         float pitch = rotation.y;
 
